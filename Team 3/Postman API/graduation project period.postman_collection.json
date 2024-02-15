@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "0470a84a-a5a6-430b-9291-0a9bebcf27ad",
+		"name": "graduation project period",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21835607"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var moment = require(\"moment\");\r",
+							"\r",
+							"pm.environment.set('date1', moment().add(1, 'days').toISOString());\r",
+							"pm.environment.set('date2', moment().add(2, 'days').toISOString());\r",
+							"pm.environment.set('date3', moment().add(14, 'days').toISOString());\r",
+							"pm.environment.set('date4', moment().add(20, 'days').toISOString());\r",
+							"pm.environment.set('date5', moment().add(100, 'days').toISOString());\r",
+							"pm.environment.set('date6', moment().add(120, 'days').toISOString());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"\",\r\n  \"contactInstructorTime\": \"{{date1}}\",\r\n  \"registerTopicTime\": \"{{date2}}\",\r\n  \"syllabusSubmissionTime\": \"{{date3}}\",\r\n  \"syllabusReviewTime\": \"{{date4}}\",\r\n  \"graduationProjectTime\": \"{{date5}}\",\r\n  \"protectionTime\": \"{{date6}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/period",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"period"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Single",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/period/22520b71-d9a4-47dc-a2df-6dbf1b21c4be",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"period",
+						"22520b71-d9a4-47dc-a2df-6dbf1b21c4be"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/period",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"period"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

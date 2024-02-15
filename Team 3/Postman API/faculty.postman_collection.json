@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "624d6d25-ce4b-44f8-ab40-fcef76a478cf",
+		"name": "faculty",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21835607"
+	},
+	"item": [
+		{
+			"name": "confirm",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"studentId\":\"4d9936d7-394d-4847-bd40-2c8045612c60\",\r\n    \"lecturerId\":\"6f26970d-12be-4777-b4de-a78cafa36a65\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/faculty/lecturer/confirm",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"faculty",
+						"lecturer",
+						"confirm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "assign",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"studentId\":\"20b0dccc-d894-43e4-935d-6ad0a7644d10\",\r\n    \"lecturerId\":\"6f26970d-12be-4777-b4de-a78cafa36a65\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/faculty/lecturer/assign",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"faculty",
+						"lecturer",
+						"assign"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
